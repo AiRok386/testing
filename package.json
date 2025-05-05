@@ -13,3 +13,7 @@
     "mongoose": "^7.5.0"
   }
 }
+{
+  "email": "eve.holt@reqres.in",
+  "password": "cityslicka"
+}
