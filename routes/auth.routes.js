@@ -1,8 +1,13 @@
-const express = require("express");
-const router = express.Router();
-const { signup, login } = require("../controllers/authController");
+const mongoose = require("mongoose");
 
-router.post("/signup", signup);
-router.post("/login", login);
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("✅ MongoDB connected");
+  } catch (err) {
+    console.error("❌ MongoDB error:", err.message);
+    process.exit(1);
+  }
+};
 
-module.exports = router;
+module.exports = connectDB;
